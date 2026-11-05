@@ -157,7 +157,7 @@ python app.py
 Open the local URL displayed in your terminal, typically:
 
 ```text
-http://127.0.0.1:5000
+https://plant-leaf-disease-image-classification.vercel.app/
 ```
 
 ## 📸 Screenshots
