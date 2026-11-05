@@ -1,0 +1,25 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Dataset and training files
+Dataset/
+*.pkl
+
+# Unused models
+models/custom_cnn.keras
+models/mobilenetv2.keras
+
+# Temporary uploads
+uploads/*
+
+# Logs and cache
+*.log
+.pytest_cache/

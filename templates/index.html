@@ -1,0 +1,507 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071b13">
+    <title>LeafCare AI | Intelligent Plant Health</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <!-- NAVIGATION -->
+    <header class="navbar" id="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">✳</span>
+            <span>LeafCare<span class="logo-highlight">AI</span></span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#scanner" class="nav-link">Disease Scanner</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#about" class="nav-link">About</a>
+        </nav>
+
+        <a href="#scanner" class="nav-button">
+            Start Scanning <span>↗</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero section-container" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    AI-POWERED PLANT INTELLIGENCE
+                </div>
+
+                <h1>
+                    Give Your Plants<br>
+                    The <span class="gradient-text">Care They</span><br>
+                    Deserve.
+                </h1>
+
+                <p class="hero-description">
+                    Detect plant leaf diseases in seconds using intelligent
+                    image classification. Understand what's happening to
+                    your plants and discover ways to protect them.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#scanner" class="primary-button">
+                        <span>Explore Disease Scanner</span>
+                        <span class="button-arrow">↗</span>
+                    </a>
+
+                    <a href="#features" class="secondary-button">
+                        Explore Features
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="stat-item">
+                        <h3>38<span>+</span></h3>
+                        <p>Disease Classes</p>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat-item">
+                        <h3>14</h3>
+                        <p>Plant Types</p>
+                    </div>
+
+                    <div class="stat-divider"></div>
+
+                    <div class="stat-item">
+                        <h3>96<span>%</span></h3>
+                        <p>Test Accuracy</p>
+                    </div>
+
+                </div>
+
+                <p class="accuracy-note">
+                    *Measured on the project's held-out test dataset.
+                </p>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="visual-orbit orbit-one"></div>
+                <div class="visual-orbit orbit-two"></div>
+
+                <div class="hero-image-card">
+                    <div class="image-card-top">
+                        <span class="live-indicator"></span>
+                        PLANT HEALTH ANALYSIS
+                        <span class="image-card-menu">•••</span>
+                    </div>
+
+                    <div class="plant-illustration">
+                        <div class="plant-circle">
+                            <div class="plant-emoji">🌿</div>
+                        </div>
+                    </div>
+
+                    <div class="health-card">
+                        <div>
+                            <span class="health-label">Plant intelligence</span>
+                            <h3>Health starts here.</h3>
+                        </div>
+                        <span class="health-icon">✦</span>
+                    </div>
+
+                    <div class="floating-chip chip-one">
+                        <span>✦</span> AI Detection
+                    </div>
+
+                    <div class="floating-chip chip-two">
+                        <span>✓</span> Smart Analysis
+                    </div>
+
+                </div>
+
+                <div class="visual-decoration decoration-one">✳</div>
+                <div class="visual-decoration decoration-two">✧</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST STRIP -->
+        <section class="trust-strip">
+            <div class="trust-content">
+                <span>BUILT WITH</span>
+                <strong>TensorFlow</strong>
+                <i></i>
+                <strong>MobileNetV2</strong>
+                <i></i>
+                <strong>Computer Vision</strong>
+                <i></i>
+                <strong>Deep Learning</strong>
+            </div>
+        </section>
+
+
+        <!-- SCANNER SECTION -->
+        <section class="scanner-section section-container" id="scanner">
+
+            <div class="section-heading">
+                <span class="section-eyebrow">✳ INTELLIGENT SCANNER</span>
+                <h2>Let's understand your <span class="gradient-text">plant.</span></h2>
+                <p>Upload a clear picture of a plant leaf. Our trained model will analyze it and predict its condition.</p>
+            </div>
+
+
+            <div class="scanner-layout">
+
+                <div class="scanner-main">
+
+                    <div class="scanner-top">
+                        <div>
+                            <span class="scanner-number">01 / IMAGE INPUT</span>
+                            <h3>Upload leaf image</h3>
+                        </div>
+                        <span class="secure-tag">● Image analysis</span>
+                    </div>
+
+
+                    <div class="upload-area" id="uploadArea">
+
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+
+                        <div class="upload-content" id="uploadContent">
+
+                            <div class="upload-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 16V4M12 4L7 9M12 4L17 9M4 16V19C4 20.1 4.9 21 6 21H18C19.1 21 20 20.1 20 19V16"
+                                          stroke="currentColor" stroke-width="1.7"
+                                          stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                            <h3>Drop your leaf image here</h3>
+                            <p>or browse files from your device</p>
+
+                            <button type="button" class="browse-button" id="browseButton">
+                                Browse Image
+                            </button>
+
+                            <span class="upload-hint">PNG, JPG, JPEG · Maximum 8 MB</span>
+
+                        </div>
+
+
+                        <div class="preview-container" id="previewContainer" hidden>
+                            <img id="imagePreview" src="" alt="Selected plant leaf preview">
+
+                            <div class="preview-overlay">
+                                <span class="preview-label">IMAGE READY</span>
+                                <button type="button" id="removeImage" class="remove-image">
+                                    Remove image ✕
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="scanner-bottom">
+                        <div class="privacy-note">
+                            <span>✦</span>
+                            Upload a clear, well-lit leaf photograph.
+                        </div>
+
+                        <button type="button" id="analyzeButton" class="analyze-button" disabled>
+                            Analyze My Plant <span>→</span>
+                        </button>
+                    </div>
+                    <p id="statusMessage" role="status" aria-live="polite">
+    Upload a leaf image to begin.
+</p>
+
+                </div>
+
+
+                <aside class="scanner-sidebar">
+
+                    <div class="sidebar-card">
+                        <span class="sidebar-icon">🌱</span>
+                        <h3>How it works</h3>
+
+                        <div class="step-list">
+
+                            <div class="step">
+                                <span class="step-count">01</span>
+                                <div>
+                                    <h4>Upload image</h4>
+                                    <p>Select a clear picture of the leaf.</p>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-count">02</span>
+                                <div>
+                                    <h4>AI analysis</h4>
+                                    <p>MobileNetV2 analyzes the image.</p>
+                                </div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-count">03</span>
+                                <div>
+                                    <h4>Get insights</h4>
+                                    <p>Explore the predicted condition and guidance.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="sidebar-tip">
+                        <span>✦ QUICK TIP</span>
+                        <p>Capture the leaf against a simple background for a clearer image.</p>
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+
+<!-- RESULTS -->
+<section class="result-section" id="resultSection" hidden>
+
+    <div class="result-heading">
+        <span class="section-eyebrow">✳ ANALYSIS COMPLETE</span>
+        <h2>Your plant health <span class="gradient-text">report.</span></h2>
+    </div>
+
+    <div class="result-card">
+
+        <!-- MAIN DIAGNOSIS -->
+        <div class="result-main">
+
+            <span class="result-status" id="predictionStatus">
+                PREDICTION RESULT
+            </span>
+
+            <h3 id="diseaseName">Disease name</h3>
+
+            <p id="diseaseDescription"></p>
+
+            <!-- MOBILENETV2 CONFIDENCE -->
+            <div class="confidence-wrapper">
+
+                <div class="confidence-info">
+                    <span>MobileNetV2 Prediction Confidence</span>
+                    <strong id="confidence">0%</strong>
+                </div>
+
+                <div class="confidence-track">
+                    <div class="confidence-fill" id="confidenceBar"></div>
+                </div>
+
+                <small class="confidence-note">
+                    This score represents the classifier's top predicted class,
+                    not the probability that the diagnosis is correct.
+                </small>
+
+            </div>
+
+        </div>
+
+        <!-- PRIMARY RESULT DETAILS -->
+        <div class="result-details">
+
+            <div class="detail-card">
+                <span class="detail-icon">🔬</span>
+                <h4>Possible Causes</h4>
+                <p id="diseaseCauses"></p>
+            </div>
+
+            <div class="detail-card">
+                <span class="detail-icon">🌿</span>
+                <h4>Suggested Solutions</h4>
+                <p id="diseaseSolutions"></p>
+            </div>
+
+        </div>
+
+        <!-- ADDITIONAL AI ANALYSIS -->
+        <div class="gemini-details-wrapper">
+
+            <div class="gemini-section-heading">
+                <span class="section-eyebrow">✳ AI VISUAL VERIFICATION</span>
+                <h3>Deeper Plant Insights</h3>
+                <p>
+                    Additional observations and recommendations from
+                    Gemini's independent image assessment.
+                </p>
+            </div>
+
+            <!-- JavaScript will populate this container -->
+            <div id="geminiDetails" class="gemini-details-grid"></div>
+
+        </div>
+
+        <!-- SCAN AGAIN -->
+        <button type="button"
+                class="secondary-button scan-again-button"
+                id="scanAgainButton">
+            Scan Another Leaf ↗
+        </button>
+
+        <p class="result-disclaimer">
+            This is an AI-assisted image assessment, not a confirmed
+            professional plant diagnosis. Recommendations should be
+            checked against local agricultural guidance.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+        <!-- FEATURES -->
+        <section class="features-section section-container" id="features">
+
+            <div class="section-heading">
+                <span class="section-eyebrow">✳ WHAT MAKES IT SPECIAL</span>
+                <h2>More than just <span class="gradient-text">detection.</span></h2>
+                <p>A collection of intelligent tools designed to make plant health analysis easier.</p>
+            </div>
+
+
+            <div class="features-grid">
+
+                <article class="feature-card">
+                    <div class="feature-icon">⌕</div>
+                    <span class="feature-index">01</span>
+                    <h3>Smart Detection</h3>
+                    <p>Image classification using a trained MobileNetV2 deep learning model.</p>
+                    <span class="feature-link">INTELLIGENT ANALYSIS ↗</span>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">◉</div>
+                    <span class="feature-index">02</span>
+                    <h3>Confidence Insights</h3>
+                    <p>See the model's confidence score alongside its predicted plant condition.</p>
+                    <span class="feature-link">CLEAR RESULTS ↗</span>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">✿</div>
+                    <span class="feature-index">03</span>
+                    <h3>Disease Guidance</h3>
+                    <p>Explore possible causes and general suggestions for plant care.</p>
+                    <span class="feature-link">BETTER PLANT CARE ↗</span>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">⌘</div>
+                    <span class="feature-index">04</span>
+                    <h3>Multi-Plant Support</h3>
+                    <p>One trained model covering 38 image classes across 14 plant types.</p>
+                    <span class="feature-link">38 IMAGE CLASSES ↗</span>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="about-section section-container" id="about">
+
+            <div class="about-content">
+                <span class="section-eyebrow">✳ ABOUT LEAFCARE AI</span>
+                <h2>Technology with a <span class="gradient-text">greener purpose.</span></h2>
+
+                <p>
+                    LeafCare AI is a plant leaf image classification project
+                    that combines computer vision and deep learning to help
+                    identify potential plant diseases.
+                </p>
+
+                <p>
+                    Its classification system uses transfer learning with
+                    MobileNetV2, trained on a multi-plant dataset containing
+                    38 image classes.
+                </p>
+
+                <a href="#scanner" class="primary-button">
+                    Try the Scanner <span class="button-arrow">↗</span>
+                </a>
+            </div>
+
+            <div class="about-visual">
+                <div class="about-circle">
+                    <span>🌱</span>
+                </div>
+                <div class="about-orbit"></div>
+                <span class="about-floating floating-a">AI + NATURE</span>
+                <span class="about-floating floating-b">38 CLASSES</span>
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <a href="#home" class="logo">
+                <span class="logo-icon">✳</span>
+                <span>LeafCare<span class="logo-highlight">AI</span></span>
+            </a>
+
+            <p>Smarter insights. Healthier plants. Greener tomorrow.</p>
+
+            <a href="#home" class="back-to-top">Back to top ↑</a>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 LeafCare AI. Plant health meets intelligent technology.</span>
+            <span>Built with 🌿 and AI</span>
+        </div>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
