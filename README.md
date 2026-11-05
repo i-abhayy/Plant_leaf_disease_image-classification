@@ -1,147 +1,204 @@
+# 🌿 LeafCare AI
+### Plant Leaf Disease Detection and Care Recommendation System
 
-# 🌱 Plant Leaf Disease Image Classification
+LeafCare AI is an AI-powered plant leaf disease detection system that uses **MobileNetV2 Deep Learning** and **Google Gemini AI** to analyze plant leaf images, identify possible diseases, and provide care recommendations.
 
-A Deep Learning and Computer Vision project focused on classifying plant leaf diseases from images using Convolutional Neural Networks (CNN) and MobileNetV2 transfer learning.
+The project combines image classification with AI-assisted visual assessment to help users understand potential plant health issues.
 
-## 🎯 Project Overview
+---
 
-Plant diseases can affect agricultural productivity and crop quality. This project aims to build an image classification system that identifies healthy and diseased plant leaves using deep learning techniques.
+## ✨ Features
 
-The project explores image preprocessing, CNN model development, transfer learning, and model evaluation.
+- **38-Class Disease Classification:** Identifies plant diseases across 14 plant types using a trained MobileNetV2 model.
+- **Image Upload:** Upload a plant leaf image for analysis.
+- **AI-Powered Assessment:** Uses Google Gemini to inspect the uploaded image and provide an additional assessment.
+- **Disease Explanation:** Displays information about the predicted condition.
+- **Possible Causes:** Provides potential reasons behind the observed symptoms.
+- **Care Recommendations:** Suggests practical steps to help care for affected plants.
+- **Prevention Tips:** Provides suggestions to reduce the risk of future disease.
+- **Prediction Confidence:** Displays the MobileNetV2 model's confidence score.
+- **Responsive Interface:** Built using HTML, CSS, and JavaScript.
 
-## 🚀 Objectives
+## 🧠 Machine Learning Model
 
-- Explore and prepare a labelled plant leaf image dataset.
-- Perform image preprocessing and augmentation.
-- Build a custom Convolutional Neural Network (CNN).
-- Implement MobileNetV2 using transfer learning.
-- Compare model performance using evaluation metrics.
-- Develop an interactive application for leaf disease classification.
+The project uses **MobileNetV2**, a convolutional neural network architecture based on transfer learning.
 
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
+| Model Information | Details |
 |---|---|
-| Python | Programming language |
-| Jupyter Notebook | Development environment |
-| TensorFlow | Deep learning framework |
-| Keras | Model development API |
-| NumPy | Numerical operations |
-| Pandas | Data handling |
-| Matplotlib | Data visualization |
-| Scikit-learn | Model evaluation |
-| Streamlit | Interactive application (planned) |
+| Architecture | MobileNetV2 |
+| Framework | TensorFlow / Keras |
+| Image Input Size | 224 × 224 |
+| Number of Classes | 38 |
+| Plant Types | 14 |
+| Training Dataset | PlantVillage |
+| Model File | `multiplant_mobilenetv2_best.keras` |
 
-## 📊 Dataset
+### Model Evaluation
 
-This project uses the **PlantVillage Dataset**, a publicly available collection of labelled plant leaf images.
+The model was evaluated on a held-out test dataset.
 
-**Dataset:** [PlantVillage Dataset](https://github.com/spMohanty/PlantVillage-Dataset)
+| Metric | Score |
+|---|---:|
+| Accuracy | 96.61% |
+| Macro Precision | 95.97% |
+| Macro Recall | 95.30% |
+| Macro F1-Score | 95.56% |
+| Weighted F1-Score | 96.58% |
 
-The initial classification experiment will focus on five tomato leaf categories:
+*These results represent the model's evaluation on the test dataset. Real-world performance may vary depending on image quality, lighting, plant varieties, and environmental conditions.*
 
-1. Tomato Healthy
-2. Tomato Bacterial Spot
-3. Tomato Early Blight
-4. Tomato Late Blight
-5. Tomato Leaf Mold
+## 🛠️ Technologies Used
 
-The final image counts will be determined during dataset exploration and preprocessing.
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript
 
-## 🧠 Models
+**Backend**
+- Python
+- Flask
 
-### 1. Custom CNN
-A Convolutional Neural Network developed and trained from scratch to establish a baseline classification model.
+**Machine Learning**
+- TensorFlow
+- Keras
+- MobileNetV2
+- NumPy
 
-### 2. MobileNetV2
-A pretrained deep learning model using transfer learning to extract image features and classify plant leaf categories.
+**Generative AI**
+- Google Gemini API
 
-Both approaches will be evaluated and compared.
-
-## 📈 Model Evaluation
-
-The models will be evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- Confusion Matrix
-- Correct and Incorrect Prediction Analysis
-
-Evaluation results will be added after model training.
+**Development Tools**
+- VS Code
+- Jupyter Notebook
+- Git and GitHub
 
 ## 📂 Project Structure
 
 ```text
-Plant-Leaf-Disease-Classification/
+LeafCare-AI/
 │
-├── data/
-│   ├── raw/
-│   └── processed/
+├── app.py
+├── .gitignore
+│
+├── models/
+│   ├── class_names.json
+│   └── multiplant_mobilenetv2_best.keras
 │
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb
-│   ├── 02_data_preprocessing.ipynb
-│   ├── 03_custom_cnn.ipynb
-│   ├── 04_mobilenetv2.ipynb
-│   └── 05_model_evaluation.ipynb
+│   ├── 02_cnn_model.ipynb
+│   └── 03_mobilenetv2_model.ipynb
 │
-├── models/
-├── reports/
-├── app.py
-├── requirements.txt
-├── .gitignore
-└── README.md
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
+│
+└── templates/
+    └── index.html
 ```
 
-## ⚙️ Installation and Setup
+## 🚀 Installation and Setup
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Plant-Leaf-Disease-Classification.git
+git clone https://github.com/i-abhayy/Plant_leaf_disease_image-classification.git
 ```
 
-### 2. Navigate to the project directory
+### 2. Navigate to the Project Folder
 
 ```bash
-cd Plant-Leaf-Disease-Classification
+cd Plant_leaf_disease_image-classification
 ```
 
-### 3. Install dependencies
+### 3. Create a Virtual Environment
 
 ```bash
-pip install -r requirements.txt
+python -m venv venv
 ```
 
-### 4. Launch Jupyter Notebook
+Activate it on Windows:
 
 ```bash
-jupyter notebook
+venv\Scripts\activate
 ```
 
-## 🖥️ Interactive Demo
+### 4. Install Dependencies
 
-An interactive application is planned where users will be able to upload a plant leaf image and receive a predicted classification from the trained model.
+```bash
+pip install flask tensorflow numpy pillow google-genai python-dotenv
+```
 
-## ⚠️ Disclaimer
+Use Python and TensorFlow versions compatible with your environment.
 
-This project is intended for educational and demonstration purposes only. Its predictions should not be considered professional agricultural advice or a substitute for expert plant disease diagnosis.
+### 5. Configure Gemini API
 
-## 📌 Project Status
+Create a `.env` file in the root project directory:
 
-**Currently in Development 🚧**
+```env
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=gemini-flash-latest
+```
 
-Dataset preparation, model development, evaluation, and application implementation are being carried out progressively.
+Replace `your_gemini_api_key` with your own API key.
 
-## 👨‍💻 Author
+Never upload your actual `.env` file or API key to GitHub.
+
+You can obtain a Gemini API key through [Google AI Studio](https://aistudio.google.com/apikey).
+
+### 6. Run the Application
+
+```bash
+python app.py
+```
+
+Open the local URL displayed in your terminal, typically:
+
+```text
+http://127.0.0.1:5000
+```
+
+## 📸 Screenshots
+
+Add screenshots of your application here.
+
+You can create a `screenshots/` folder and add your interface images.
+
+For example:
+
+```markdown
+![LeafCare AI Homepage](screenshots/homepage.png)
+![Disease Detection Results](screenshots/results.png)
+```
+
+## ⚠️ Important Notes
+
+- The trained model supports 38 predefined plant disease and healthy-leaf classes.
+- Plants or diseases outside the training classes may not be identified correctly.
+- A high model confidence score does not guarantee a correct diagnosis.
+- Gemini's assessment is an additional AI-generated opinion, not a medical or agricultural laboratory diagnosis.
+- Always inspect the plant and consult an agricultural expert when necessary.
+- The original training dataset and temporary training files are not included in this repository.
+
+## 🔮 Future Improvements
+
+- Improve detection on real-world plant images.
+- Expand the supported plant and disease categories.
+- Add more detailed disease-specific care guidance.
+- Improve deployment and application performance.
+- Add additional plant health analysis capabilities.
+
+## 👨‍💻 Developer
 
 **Abhay Yadav**
 
-- GitHub: [i-abhayy](https://github.com/i-abhayy)
+- GitHub: [@i-abhayy](https://github.com/i-abhayy)
 - LinkedIn: [Abhay Yadav](https://www.linkedin.com/in/i-abhay/)
 
 ---
 
 ⭐ If you find this project interesting, consider giving the repository a star!
+
+**LeafCare AI | Helping plants stay healthy through AI and Deep Learning.** 🌱
